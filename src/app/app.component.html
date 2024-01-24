@@ -1,0 +1,22 @@
+<div>
+    <form>
+      <label for="prisoner-id">ID Prisonnier:</label>
+      <input type="text" id="prisoner-id" #prisonerIdInput placeholder="ID Prisonnier">
+  
+      <label for="start_datetime">Start Datetime:</label>
+      <input type="datetime-local" id="start_datetime" #startDatetimeInput required><br>
+  
+      <label for="end_datetime">End Datetime:</label>
+      <input type="datetime-local" id="end_datetime" #endDatetimeInput required><br>
+  
+      <button (click)="onSend()">send</button>
+    </form>
+  </div>
+  
+ 
+  <div *ngFor="let data of response">
+    <p>ID de l'utilisateur: {{ data.id }}</p>
+    <p>Type de mission: {{ data.mission_type }}</p>
+    <p>Heure de vérification: {{ data.verification_time }}</p>
+    <hr>
+  </div>
